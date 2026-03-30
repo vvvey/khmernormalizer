@@ -20,6 +20,9 @@ def clean_khmer_trailing_vowels(text):
 def reordering_khmer_chars():
   pass
 
+def clean_duplicate_coeng(text):
+  return mappings.DUPLICATE_COENG_RE.sub(r"\1", text)
+
 def normalize(
   text, 
   unicode_norm="NFKC",
@@ -36,6 +39,7 @@ def normalize(
   text = fix_quotes(text)
   text = mappings.MULTIPLE_PUNCT_REGEX.sub(r"\1", text)
   text = clean_khmer_trailing_vowels(text)
+  text = clean_duplicate_coeng(text)
   text = unicodedata.normalize(unicode_norm, text)
   
   if emoji_replacement is not None:
