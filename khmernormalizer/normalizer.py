@@ -51,9 +51,7 @@ def normalize(
   text = text.translate(mappings.CHAR_REPLACEMENTS)
   
   text = mappings.UNICODE_REPLACEMENTS_REGEX.sub(
-      lambda match: mappings.UNICODE_REPLACEMENTS.get(
-        match.group(0), f"{match.group(1)}\u09cc"
-      ), 
+      lambda match: mappings.UNICODE_REPLACEMENTS[match.group(0)], 
       text
   )
   
