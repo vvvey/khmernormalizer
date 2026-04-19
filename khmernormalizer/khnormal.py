@@ -5,7 +5,7 @@
 import enum, re
 
 class Cats(enum.Enum):
-    Other = 0; Base = 1; Robat = 2; Coeng = 3; ZFCoeng = 4
+    Other = 0; Base = 1; Coeng = 2; ZFCoeng = 3; Robat = 4
     Shift = 5; Z = 6; VPre = 7; VB = 8; VA = 9
     VPost = 10; MS = 11; MF = 12
 
