@@ -28,6 +28,7 @@ def normalize(
   unicode_norm="NFKC",
   emoji_replacement=None,
   url_replacement=None,
+  hashtag_replacement=None,
   fix_text_config=TextFixerConfig(normalization="NFC", explain=False),
   remove_zwsp=True,
 ):
@@ -47,6 +48,9 @@ def normalize(
   
   if url_replacement is not None:
     text = mappings.URL_HANDLER_REGEX.sub(url_replacement, text)
+
+  if hashtag_replacement is not None:
+    text = mappings.HASHTAG_REGEX.sub(hashtag_replacement, text)
   
   text = text.translate(mappings.CHAR_REPLACEMENTS)
   

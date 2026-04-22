@@ -10,6 +10,7 @@ A missing toolkit for **Khmer Natural Language Processing**.
 - Fix Unicode issues
 - Fix Khmer trailing vowels
 - URL Replacements
+- Hashtags Replacements
 - Unicode Normalization (NFKC)
 - Quotes symbols normalization
 - Remove repeated punctuations
@@ -33,12 +34,14 @@ https://google.com/a?x=1
 មិិិិិន 
 មួយរយះះះះះះះ
 រយះពេល
+#សួស្ដី #KhmerNLP
 """.strip()
 
 normalize(input_str, 
           emoji_replacement="", 
           remove_zwsp=True, 
-          url_replacement="")
+          url_replacement="",
+          hashtag_replacement="")
 ```
 
 Result:

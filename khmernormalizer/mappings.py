@@ -685,3 +685,6 @@ MULTIPLE_PUNCT_REGEX = re.compile(r"([៙៚៖!?។៕\u17d8])\1+")
 DUPLICATE_COENG_RE: re.Pattern = re.compile(
     r"(\u17d2[\u1780-\u17b3])\1+"
 )
+
+# a-z, A-Z, 0-9, _, Khmer characters range
+HASHTAG_REGEX = re.compile(r"#[a-zA-Z0-9_\u1780-\u17FF]+")
