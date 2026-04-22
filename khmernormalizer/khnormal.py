@@ -90,7 +90,7 @@ def khmer_normalize(txt, lang="km"):
 
     # Recategorise base or ZWJ -> coeng after coeng char
     for i in range(1, len(charcats)):
-        if charcats[i-1] == Cats.Coeng and charcats[i] in (Cats.Base, Cats.ZFCoeng):
+        if txt[i-1] in ('\u17D2', '\u200D') and charcats[i] in (Cats.Base, Cats.ZFCoeng):
             charcats[i] = Cats.Coeng
 
     # Find subranges of base+non other and sort components in the subrange
